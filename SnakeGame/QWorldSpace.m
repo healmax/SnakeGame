@@ -50,9 +50,9 @@ QWorldSize QMakeWorldSize(NSUInteger width, NSUInteger height) {
         }
         [self makeNewApplePoint];
         self.snake = [[QSnake alloc] initWithLenght:2 worldSize:self.worldSize];
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(snakeRunLoop) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.10 target:self selector:@selector(snakeRunLoop) userInfo:nil repeats:YES];
         self.isStarting = YES;
-        
+        [subscriber sendNext:@"Success"];
         [subscriber sendCompleted];
         return nil;
     }];

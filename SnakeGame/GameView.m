@@ -54,8 +54,8 @@
         [[UIColor redColor] set];
         QSnakePoint applePoint = [self.worldSpace.applePoint snakePointValue];
         CGRect rect = CGRectMake(applePoint.x*w, applePoint.y*h, w, h);
-        CGImageRef image = [UIImage imageNamed:@"apple"].CGImage;
-        CGContextDrawImage(context, rect, image);
+        UIImage *image = [UIImage imageNamed:@"apple"];
+        [image drawInRect:rect];
     }
     
     self.layer.borderColor = [UIColor redColor].CGColor;
