@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJJ-nz-nrH" customClass="GameView">
+                                <rect key="frame" x="5" y="25" width="365" height="365"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LJJ-nz-nrH" secondAttribute="height" multiplier="1:1" id="Tsc-sj-iDt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJa-Uc-Reb">
+                                <rect key="frame" x="0.0" y="410" width="375" height="257"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M1-jz-ipM">
+                                        <rect key="frame" x="172" y="58.5" width="30" height="30"/>
+                                        <state key="normal" title="up"/>
+                                        <connections>
+                                            <action selector="upButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pf8-ih-aXj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxR-Be-YAV">
+                                        <rect key="frame" x="117.5" y="113.5" width="30" height="30"/>
+                                        <state key="normal" title="left"/>
+                                        <connections>
+                                            <action selector="leftButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0hS-dA-ECB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSn-2R-EaX">
+                                        <rect key="frame" x="227.5" y="113.5" width="32" height="30"/>
+                                        <state key="normal" title="right"/>
+                                        <connections>
+                                            <action selector="rightleftButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UO2-OP-cp7"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tb-3U-yNM">
+                                        <rect key="frame" x="0.0" y="128.5" width="375" height="0.0"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="CYi-9o-Gbr"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33j-7m-PDr">
+                                        <rect key="frame" x="187.5" y="0.0" width="0.0" height="257"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" id="jFC-lY-meb"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKq-4y-ckV">
+                                        <rect key="frame" x="168.5" y="168.5" width="38" height="30"/>
+                                        <state key="normal" title="down"/>
+                                        <connections>
+                                            <action selector="downButtonOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9x-N5-ZSt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="9tb-3U-yNM" firstAttribute="top" secondItem="0M1-jz-ipM" secondAttribute="bottom" constant="40" id="1N6-Zq-Hgu"/>
+                                    <constraint firstAttribute="trailing" secondItem="9tb-3U-yNM" secondAttribute="trailing" id="7Zg-Z3-0Rj"/>
+                                    <constraint firstItem="aSn-2R-EaX" firstAttribute="centerY" secondItem="JJa-Uc-Reb" secondAttribute="centerY" id="8iU-cX-pdr"/>
+                                    <constraint firstItem="fKq-4y-ckV" firstAttribute="top" secondItem="9tb-3U-yNM" secondAttribute="bottom" constant="40" id="978-NN-NcB"/>
+                                    <constraint firstAttribute="bottom" secondItem="33j-7m-PDr" secondAttribute="bottom" id="9Wg-my-pY8"/>
+                                    <constraint firstItem="33j-7m-PDr" firstAttribute="leading" secondItem="FxR-Be-YAV" secondAttribute="trailing" constant="40" id="EPH-s5-cbi"/>
+                                    <constraint firstItem="FxR-Be-YAV" firstAttribute="centerY" secondItem="JJa-Uc-Reb" secondAttribute="centerY" id="ONf-Hd-RaV"/>
+                                    <constraint firstItem="fKq-4y-ckV" firstAttribute="centerX" secondItem="JJa-Uc-Reb" secondAttribute="centerX" id="PPc-MH-Cak"/>
+                                    <constraint firstItem="33j-7m-PDr" firstAttribute="centerX" secondItem="JJa-Uc-Reb" secondAttribute="centerX" id="XfF-Lm-xOI"/>
+                                    <constraint firstItem="9tb-3U-yNM" firstAttribute="centerY" secondItem="JJa-Uc-Reb" secondAttribute="centerY" id="hdb-Rw-R37"/>
+                                    <constraint firstItem="aSn-2R-EaX" firstAttribute="leading" secondItem="33j-7m-PDr" secondAttribute="trailing" constant="40" id="iS2-cd-wk0"/>
+                                    <constraint firstItem="9tb-3U-yNM" firstAttribute="leading" secondItem="JJa-Uc-Reb" secondAttribute="leading" id="q51-HO-UQ6"/>
+                                    <constraint firstItem="0M1-jz-ipM" firstAttribute="centerX" secondItem="JJa-Uc-Reb" secondAttribute="centerX" id="xhU-Rp-ala"/>
+                                    <constraint firstItem="33j-7m-PDr" firstAttribute="top" secondItem="JJa-Uc-Reb" secondAttribute="top" id="zPa-Lz-vzt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LJJ-nz-nrH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="0Kl-OE-bvx"/>
+                            <constraint firstAttribute="trailing" secondItem="LJJ-nz-nrH" secondAttribute="trailing" constant="5" id="97c-qy-Dwh"/>
+                            <constraint firstAttribute="trailing" secondItem="JJa-Uc-Reb" secondAttribute="trailing" id="HSA-10-WQi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JJa-Uc-Reb" secondAttribute="bottom" id="I8Q-JC-lAy"/>
+                            <constraint firstItem="LJJ-nz-nrH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="XDX-tH-Cwv"/>
+                            <constraint firstItem="JJa-Uc-Reb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Y7q-2K-Pfd"/>
+                            <constraint firstItem="JJa-Uc-Reb" firstAttribute="top" secondItem="LJJ-nz-nrH" secondAttribute="bottom" constant="20" id="zGd-he-64W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gmaeView" destination="LJJ-nz-nrH" id="fDC-fG-81O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,28 @@
+PODS:
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - MJRefresh (3.1.12)
+  - PureLayout (3.0.2)
+  - ReactiveObjC (2.1.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+
+DEPENDENCIES:
+  - MagicalRecord
+  - MJRefresh
+  - PureLayout
+  - ReactiveObjC
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+
+PODFILE CHECKSUM: 181cd00d6e916f834fbd51623648bf99b6b54320
+
+COCOAPODS: 1.2.0
