@@ -17,3 +17,8 @@ target 'SnakeGame' do
     myPods
 end
 
+target 'SnakeGameTests' do
+    inherit! :complete
+    myPods
+end
+

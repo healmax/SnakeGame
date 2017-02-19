@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "QWorldSpace.h"
+#import "QSnake.h"
 
 @interface SnakeGameTests : XCTestCase
 
@@ -34,6 +36,18 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testHeadhitBody {
+    QWorldSize worldSize = QMakeWorldSize(24, 24);
+    QSnake *snake = [[QSnake alloc] initWithLenght:6 worldSize: worldSize];
+    [snake changeDirection:QSnakeDirectionUp];
+    [snake move];
+    [snake changeDirection:QSnakeDirectionRight];
+    [snake move];
+    [snake changeDirection:QSnakeDirectionDown];
+    [snake move];
+    XCTAssertEqual([snake isHeadHitBody], YES, @"head hit body");
 }
 
 @end
