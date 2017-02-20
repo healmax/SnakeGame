@@ -13,7 +13,7 @@
 @interface ViewController ()
 
 //@property (nonatomic, strong) QWorldSpace *worldSpace;
-@property (weak, nonatomic) IBOutlet GameView *gmaeView;
+@property (weak, nonatomic) IBOutlet GameView *gameView;
 
 @end
 
@@ -24,19 +24,19 @@
 }
 
 - (IBAction)upButtonOnClick:(id)sender {
-    [self.gmaeView changeDirection:QSnakeDirectionUp];
+    [self.gameView changeDirection:QSnakeDirectionUp];
 }
 
 - (IBAction)leftButtonOnClick:(id)sender {
-    [self.gmaeView changeDirection:QSnakeDirectionLeft];
+    [self.gameView changeDirection:QSnakeDirectionLeft];
 }
 
 - (IBAction)downButtonOnClick:(id)sender {
-    [self.gmaeView changeDirection:QSnakeDirectionDown];
+    [self.gameView changeDirection:QSnakeDirectionDown];
 }
 
 - (IBAction)rightleftButtonOnClick:(id)sender {
-    [self.gmaeView changeDirection:QSnakeDirectionRight];
+    [self.gameView changeDirection:QSnakeDirectionRight];
 }
 
 @end

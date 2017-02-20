@@ -50,4 +50,29 @@
     XCTAssertEqual([snake isHeadHitBody], YES, @"head hit body");
 }
 
+- (void)testChangeDirection {
+    QWorldSize worldSize = QMakeWorldSize(24, 24);
+    QSnake *snake = [[QSnake alloc] initWithLenght:6 worldSize: worldSize];
+    QSnakePoint snakePoint =  [[snake.snakePositions firstObject] snakePointValue];
+    [snake changeDirection:QSnakeDirectionUp];
+    [snake move];
+    NSUInteger nextSnakePointX = snakePoint.x;
+    NSUInteger nextSnakePointY = snakePoint.y - 1;
+    XCTAssertEqual([[snake.snakePositions firstObject]snakePointValue].x, nextSnakePointX, @"");
+    XCTAssertEqual([[snake.snakePositions firstObject]snakePointValue].y, nextSnakePointY, @"");
+}
+
+- (void)testIncreaseSnakeLength {
+    QWorldSize worldSize = QMakeWorldSize(24, 24);
+    QSnake *snake = [[QSnake alloc] initWithLenght:6 worldSize: worldSize];
+    QSnakePoint snakePoint =  [[snake.snakePositions lastObject] snakePointValue];
+    [snake increaseSnakeLenght:2];
+    QSnakePoint snakeBody;
+    for (NSInteger index =  0; index<2 ; index++) {
+        snakeBody = [snake.snakePositions[snake.snakePositions.count-(index+1)] snakePointValue];
+        XCTAssertEqual(snakePoint.x, snakeBody.x, @"");
+        XCTAssertEqual(snakePoint.y, snakeBody.y, @"");
+    }
+}
+
 @end

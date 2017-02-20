@@ -106,7 +106,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gmaeView" destination="LJJ-nz-nrH" id="fDC-fG-81O"/>
+                        <outlet property="gameView" destination="LJJ-nz-nrH" id="BoY-Tq-Vpu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
