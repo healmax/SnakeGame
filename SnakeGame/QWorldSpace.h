@@ -22,7 +22,7 @@ QWorldSize QMakeWorldSize(NSUInteger width, NSUInteger height);
 @property (nonatomic, strong, readonly) NSValue *applePoint;
 @property (nonatomic, strong) RACCommand *startCommand;
 
-@property (nonatomic, copy) void(^refreshView)();
+@property (nonatomic, copy) void(^refreshView)(void);
 
 - (instancetype)initWithWorldSize:(QWorldSize)worldSize;
 //- (void)startGame;
