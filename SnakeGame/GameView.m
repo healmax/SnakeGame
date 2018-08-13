@@ -23,7 +23,7 @@
     [super awakeFromNib];
     [self initGesture];
     [self initWorldSpace];
-    [self initStartButton];
+//    [self initStartButton];
     [self initBinding];
 }
 
@@ -42,8 +42,10 @@
     CGFloat h = self.bounds.size.height/self.worldSpace.worldSize.height;
     
     if (self.worldSpace.snake) {
-        [[UIColor blackColor] set];
         for (NSInteger index = 0 ; index<self.worldSpace.snake.snakePositions.count ; index++) {
+            CGFloat alpha = 1 - (index * 0.02);
+            alpha = MAX(alpha, 0.02);
+            [[UIColor colorWithRed:0 green:0 blue:0 alpha:alpha] set];
             QSnakePoint snakePosition = [self.worldSpace.snake getSnakePointValueByIndex:index];
             CGRect rect = CGRectMake(snakePosition.x*w, snakePosition.y*h, w, h);
             CGContextFillRect(context, rect);
@@ -54,11 +56,14 @@
         [[UIColor redColor] set];
         QSnakePoint applePoint = [self.worldSpace.applePoint snakePointValue];
         CGRect rect = CGRectMake(applePoint.x*w, applePoint.y*h, w, h);
-        UIImage *image = [UIImage imageNamed:@"apple"];
-        [image drawInRect:rect];
+        CGContextFillRect(context, rect);
     }
     
     self.layer.borderColor = [UIColor redColor].CGColor;
+}
+
+- (void)startGame {
+    [self.worldSpace.startCommand execute:nil];
 }
 
 -(void)setWorldSpace:(QWorldSpace *)worldSpace {
@@ -73,23 +78,22 @@
     @weakify(self)
     [RACObserve(self.worldSpace, isStarting) subscribeNext:^(NSNumber *isStarting) {
         @strongify(self)
-        if (self.startButton) {
-            isStarting.boolValue ? [self.startButton setHidden:YES] : [self.startButton setHidden:NO];
+        if ([isStarting boolValue]) {
+            if ([self.delegate respondsToSelector:@selector(didStartGame:)]) {
+                [self.delegate didStartGame:self];
+            }
+        } else {
+            if ([self.delegate respondsToSelector:@selector(didEndGame:)]) {
+                [self.delegate didEndGame:self];
+            }
         }
     }];
 }
 
 - (void)initWorldSpace {
-    self.worldSpace = [[QWorldSpace alloc] initWithWorldSize:QMakeWorldSize(24,24)];
-}
-
-- (void)initStartButton {
-    self.startButton = [[UIButton alloc] init];
-    [self.startButton setTitle:@"start game" forState:UIControlStateNormal];
-    [self.startButton setBackgroundColor:[UIColor blueColor]];
-    [self.startButton setRac_command:self.worldSpace.startCommand];
-    [self addSubview:self.startButton];
-    [self.startButton autoCenterInSuperview];
+    CGFloat width = 24;
+    CGFloat height = (CGRectGetHeight(self.frame) / (CGRectGetWidth(self.frame) / 24));
+    self.worldSpace = [[QWorldSpace alloc] initWithWorldSize:QMakeWorldSize(width,height)];
 }
 
 - (void)initGesture {

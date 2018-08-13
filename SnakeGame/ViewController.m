@@ -10,10 +10,14 @@
 #import "QWorldSpace.h"
 #import "GameView.h"
 
-@interface ViewController ()
+@interface ViewController ()<GameViewDelegate>
 
 //@property (nonatomic, strong) QWorldSpace *worldSpace;
 @property (weak, nonatomic) IBOutlet GameView *gameView;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UILabel *startGameLabel;
+@property (assign, nonatomic) NSInteger score;
 
 @end
 
@@ -21,22 +25,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self commonInit];
 }
 
-- (IBAction)upButtonOnClick:(id)sender {
-    [self.gameView changeDirection:QSnakeDirectionUp];
+- (void)commonInit {
+    self.score = 0;
+    self.gameView.delegate = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scoreChanged) name:QWorldSpaceEatedApple object:nil];
 }
 
-- (IBAction)leftButtonOnClick:(id)sender {
-    [self.gameView changeDirection:QSnakeDirectionLeft];
+- (void)scoreChanged {
+    self.score ++;
+    self.scoreLabel.text = @(self.score).stringValue;
 }
 
-- (IBAction)downButtonOnClick:(id)sender {
-    [self.gameView changeDirection:QSnakeDirectionDown];
+- (IBAction)starGame:(id)sender {
+    [self.gameView startGame];
+    self.startGameLabel.text = @"Restart";
+    self.containerView.hidden = YES;
 }
 
-- (IBAction)rightleftButtonOnClick:(id)sender {
-    [self.gameView changeDirection:QSnakeDirectionRight];
+#pragma mark - GameViewDelegate
+
+- (void)didStartGame:(GameView *)view {
+    self.score = 0;
+    self.scoreLabel.text = @(self.score).stringValue;
+    self.containerView.hidden = YES;
+}
+
+- (void)didEndGame:(GameView *)view {
+    self.containerView.hidden = NO;
 }
 
 @end

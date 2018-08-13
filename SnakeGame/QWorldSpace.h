@@ -14,6 +14,8 @@
 
 QWorldSize QMakeWorldSize(NSUInteger width, NSUInteger height);
 
+extern NSString * const QWorldSpaceEatedApple;
+
 @interface QWorldSpace : NSObject
 
 @property (nonatomic, assign) BOOL isStarting;

@@ -9,16 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "QWorldSpace.h"
 
-//@protocol GameViewDelegate <NSObject>
-//
-//- ()
-//
-//@end
+@class GameView;
+@protocol GameViewDelegate <NSObject>
+
+- (void)didStartGame:(GameView *)view;
+- (void)didEndGame:(GameView *)view;
+
+@end
 
 @interface GameView : UIView
 
+@property (weak, nonatomic) id <GameViewDelegate> delegate;
 @property (nonatomic, strong) QWorldSpace *worldSpace;
 
+- (void)startGame;
 - (void)changeDirection:(QSnakeDirection)direction;
 
 @end

@@ -17,6 +17,8 @@ QWorldSize QMakeWorldSize(NSUInteger width, NSUInteger height) {
     return worldSize;
 }
 
+NSString * const QWorldSpaceEatedApple = @"QWorldSpaceEatedApple";
+
 @interface QWorldSpace()<QSnakeDelegate>
 
 @property (nonatomic, strong, readwrite) QSnake *snake;
@@ -74,6 +76,7 @@ QWorldSize QMakeWorldSize(NSUInteger width, NSUInteger height) {
     if (applePoint.x == snakeHeadPoint.x && applePoint.y == snakeHeadPoint.y) {
         [self.snake increaseSnakeLenght:2];
         [self makeNewApplePoint];
+        [[NSNotificationCenter defaultCenter] postNotificationName:QWorldSpaceEatedApple object:nil];
     }
     if (self.refreshView) self.refreshView();
 }
