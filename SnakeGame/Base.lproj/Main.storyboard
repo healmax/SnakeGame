@@ -126,6 +126,7 @@
                     <connections>
                         <outlet property="containerView" destination="Pwp-ev-BLI" id="WfV-KM-hUi"/>
                         <outlet property="gameView" destination="LJJ-nz-nrH" id="BoY-Tq-Vpu"/>
+                        <outlet property="maxScoreLabel" destination="bpL-EX-VRF" id="KE6-P3-QJZ"/>
                         <outlet property="scoreLabel" destination="HeH-Z1-r4a" id="iOU-PS-QVm"/>
                         <outlet property="startGameLabel" destination="xnT-SH-PwZ" id="Y1n-a8-wzk"/>
                     </connections>

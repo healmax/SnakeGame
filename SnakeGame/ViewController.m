@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UILabel *startGameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxScoreLabel;
 @property (assign, nonatomic) NSInteger score;
 
 @end
@@ -32,6 +33,9 @@
     self.score = 0;
     self.gameView.delegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scoreChanged) name:QWorldSpaceEatedApple object:nil];
+    self.scoreLabel.text = NSLocalizedString(@"Score", nil);
+    self.startGameLabel.text = NSLocalizedString(@"StartGame", nil);
+    self.maxScoreLabel.text = NSLocalizedString(@"MaxScore", nil);
 }
 
 - (void)scoreChanged {
@@ -41,7 +45,7 @@
 
 - (IBAction)starGame:(id)sender {
     [self.gameView startGame];
-    self.startGameLabel.text = @"Restart";
+    self.startGameLabel.text = NSLocalizedString(@"Restart", nil);
     self.containerView.hidden = YES;
 }
 

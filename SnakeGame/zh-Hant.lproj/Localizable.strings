@@ -1,0 +1,12 @@
+/* 
+  localizable.strings
+  SnakeGame
+
+  Created by Vincent Chiang on 2018/8/13.
+  Copyright © 2018年 qnap. All rights reserved.
+*/
+
+"Score" = "分數";
+"StartGame" = "開始遊戲";
+"Restart" = "重新開始";
+"MaxScore" = "最高分數";

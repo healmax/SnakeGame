@@ -20,6 +20,7 @@
 		3FF384D81E5356A900DA9EE9 /* QSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF384D71E5356A900DA9EE9 /* QSnake.m */; };
 		3FF384DB1E53FBB700DA9EE9 /* QWorldSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF384DA1E53FBB700DA9EE9 /* QWorldSpace.m */; };
 		3FF384E11E545D6400DA9EE9 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF384E01E545D6400DA9EE9 /* GameView.m */; };
+		4F93609A21216E9800879FC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F93609C21216E9800879FC4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		3FF384DF1E545D6400DA9EE9 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		3FF384E01E545D6400DA9EE9 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		3FF384E21E5463FA00DA9EE9 /* SnakeGameDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnakeGameDefine.h; sourceTree = "<group>"; };
+		4F93609D21216EB400879FC4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4F93609E21216ECB00879FC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		54071BBE53193A24F3359921 /* Pods-SnakeGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnakeGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnakeGameTests/Pods-SnakeGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E191DF34B29F5D3CBFC88A3 /* libPods-SnakeGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SnakeGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		963B7D4CB314FF41EBFE06B2 /* Pods-SnakeGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnakeGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnakeGame/Pods-SnakeGame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF384A41E53567700DA9EE9 /* main.m */,
+				4F93609C21216E9800879FC4 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -282,8 +286,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hant",
+				en,
 			);
 			mainGroup = 3FF384971E53567600DA9EE9;
 			productRefGroup = 3FF384A11E53567700DA9EE9 /* Products */;
@@ -303,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF384B31E53567700DA9EE9 /* LaunchScreen.storyboard in Resources */,
+				4F93609A21216E9800879FC4 /* Localizable.strings in Resources */,
 				3FF384B01E53567700DA9EE9 /* Assets.xcassets in Resources */,
 				3FF384AE1E53567700DA9EE9 /* Main.storyboard in Resources */,
 			);
@@ -479,6 +485,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		4F93609C21216E9800879FC4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F93609D21216EB400879FC4 /* zh-Hant */,
+				4F93609E21216ECB00879FC4 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -486,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -542,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
