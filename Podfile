@@ -10,6 +10,8 @@ def myPods
     pod 'SDWebImage'
     pod 'MJRefresh'
     pod 'PureLayout'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 

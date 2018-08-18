@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.10.5):
+    - Fabric (~> 1.7.9)
+  - Fabric (1.7.9)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
@@ -10,19 +13,33 @@ PODS:
   - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - MagicalRecord
   - MJRefresh
   - PureLayout
   - ReactiveObjC
   - SDWebImage
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+    - MagicalRecord
+    - MJRefresh
+    - PureLayout
+    - ReactiveObjC
+    - SDWebImage
+
 SPEC CHECKSUMS:
+  Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
+  Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 66ad5691ca0c8a34b39b1083de0dda9e8222aaf8
+PODFILE CHECKSUM: cfff6f59cc00b2a3689c7130354326521e88bb80
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3
